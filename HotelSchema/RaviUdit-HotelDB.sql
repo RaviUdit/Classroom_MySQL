@@ -5,6 +5,7 @@
 DROP DATABASE IF EXISTS RaviUditHotelSchema;
 
 CREATE DATABASE RaviUditHotelSchema; 
+USE RaviUditHotelSchema;
 
 -- The following tables deal with Room Data
 CREATE TABLE RoomType(
@@ -18,7 +19,7 @@ CREATE TABLE Rooms(
 	RoomNumber INT PRIMARY KEY,
     
     RoomTypeID INT, 
-    FOREIGN KEY fk_RoomTypeID (RoomTypeID) 
+    FOREIGN KEY fk_Rooms_RoomTypeID (RoomTypeID) 
 		REFERENCES RoomType(RoomTypeID),
 	
     Amenities VARCHAR(50),
@@ -39,3 +40,19 @@ CREATE TABLE Guests(
 );
 
 -- The following table deals with Reservation Info
+CREATE TABLE Reservation(
+	ReservationNumber INT AUTO_INCREMENT PRIMARY KEY,
+    
+    RoomNumber INT,
+    FOREIGN KEY fk_Reservation_RoomNumber(RoomNumber)
+		REFERENCES Rooms(RoomNumber),
+	GuestID INT,
+    FOREIGN KEY fk_Reservation_GuestID(GuestID)
+		REFERENCES Guests(GuestID),
+	
+    Adults CHAR(1),
+    Children CHAR(1),
+    StartDate DATE,
+    EndDate DATE,
+    TotalCost DECIMAL(7,2)
+)
