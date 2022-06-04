@@ -10,7 +10,28 @@ INSERT INTO RoomType (RoomTypeID, RoomTypeName, StndOccupancy, MaxiOccupancy) VA
     
 INSERT INTO Rooms (RoomNumber, RoomTypeID, Amenities, AdaAccessible, BasePrice, ExtraPerson) VALUES
 	-- Second Floor Rooms
-    (201, 2, 'MicroWave, Jacuzzi', 0, 199.99, 10);
+    (201, 2, 'MicroWave, Jacuzzi', 0, 199.99, 10),
+    (202, 2, 'Refrigerator', 1, 174.99, 10),
+    (203, 2, 'MicroWave, Jacuzzi', 0, 199.99, 10),
+    (204, 2, 'Refrigerator', 1, 174.99, 10),
+    (205, 1, 'Microwave, Refrigerator, Jacuzzi', 0, 174.99, 'NA'),
+    (206, 1, 'Microwave, Refrigerator', 1, 149.99, 'NA'),
+    (207, 1, 'Microwave, Refrigerator, Jacuzzi', 0, 174.99, 'NA'),
+    (208, 1, 'Microwave, Refrigerator', 1, 149.99, 'NA'),
+    
+    -- Third Floor Rooms
+    (301, 2, 'MicroWave, Jacuzzi', 0, 199.99, 10),
+    (302, 2, 'Refrigerator', 1, 174.99, 10),
+    (303, 2, 'MicroWave, Jacuzzi', 0, 199.99, 10),
+    (304, 2, 'Refrigerator', 1, 174.99, 10),
+    (305, 1, 'Microwave, Refrigerator, Jacuzzi', 0, 174.99, 'NA'),
+    (306, 1, 'Microwave, Refrigerator', 1, 149.99, 'NA'),
+    (307, 1, 'Microwave, Refrigerator, Jacuzzi', 0, 174.99, 'NA'),
+    (308, 1, 'Microwave, Refrigerator', 1, 149.99, 'NA'),
+    
+    -- Fourth Floor Suites
+    (401, 3, 'MicroWave, Refrigerator, Oven', 1, 399.99, 'NA'),
+    (402, 3, 'MicroWave, Refrigerator, Oven', 1, 399.99, 'NA');
 	
 
 -- Inserting Data about Guests
