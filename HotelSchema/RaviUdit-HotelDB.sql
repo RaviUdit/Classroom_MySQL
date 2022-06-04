@@ -31,7 +31,8 @@ CREATE TABLE Rooms(
 -- The following table deals with guest data
 CREATE TABLE Guests(
 	GuestID INT AUTO_INCREMENT PRIMARY KEY,
-    GuestName VARCHAR(50),
+    GuestFirstName VARCHAR(50),
+    GuestLastName VARCHAR(50),
     GuestAddress VARCHAR(100),
     City VARCHAR(50),
     State CHAR(2),
