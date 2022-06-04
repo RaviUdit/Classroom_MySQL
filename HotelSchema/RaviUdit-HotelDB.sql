@@ -23,7 +23,7 @@ CREATE TABLE Rooms(
 		REFERENCES RoomType(RoomTypeID),
 	
     Amenities VARCHAR(50),
-    AdaAccesible BOOL,
+    AdaAccessible BOOL,
     BasePrice DECIMAL(5, 2),
     ExtraPerson CHAR(3)
 );

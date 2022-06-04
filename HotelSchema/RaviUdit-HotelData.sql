@@ -7,6 +7,11 @@ INSERT INTO RoomType (RoomTypeID, RoomTypeName, StndOccupancy, MaxiOccupancy) VA
 	(1, 'Single', 2, 2),
     (2, 'Double', 2, 4),
     (3, 'Suite', 3, 8);
+    
+INSERT INTO Rooms (RoomNumber, RoomTypeID, Amenities, AdaAccessible, BasePrice, ExtraPerson) VALUES
+	-- Second Floor Rooms
+    (201, 2, 'MicroWave, Jacuzzi', 0, 199.99, 10);
+	
 
 -- Inserting Data about Guests
 INSERT INTO Guests (GuestFirstName, GuestLastName, GuestAddress, City, State, ZipCode, PhoneNumber) VALUES
@@ -24,5 +29,7 @@ INSERT INTO Guests (GuestFirstName, GuestLastName, GuestAddress, City, State, Zi
     ('Joleen', 'Tison', '87 Queen St.', 'Drexel Hill', 'PA', '19026', '(231) 893-2755');
 
 
-SELECT * FROM guests;
+-- SELECT * FROM guests;
 -- SELECT * FROM roomtype;
+-- SELECT * FROM rooms;
+-- SELECT * FROM Guests WHERE GuestAddress LIKE'%Hawaii%';
