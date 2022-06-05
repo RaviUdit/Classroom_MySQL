@@ -41,19 +41,29 @@ CREATE TABLE Guests(
 );
 
 -- The following table deals with Reservation Info
-CREATE TABLE Reservation(
+CREATE TABLE GuestReservation(
 	ReservationNumber INT AUTO_INCREMENT PRIMARY KEY,
-    
-    RoomNumber INT,
-    FOREIGN KEY fk_Reservation_RoomNumber(RoomNumber)
-		REFERENCES Rooms(RoomNumber),
+
 	GuestID INT,
     FOREIGN KEY fk_Reservation_GuestID(GuestID)
-		REFERENCES Guests(GuestID),
+		REFERENCES Guests(GuestID)
+
+);
+
+CREATE TABLE RoomReservation(
+	ReservationNumber INT NOT NULL,
+    RoomNumber INT NOT NULL, 
+    
+    PRIMARY KEY pk_RoomReservation (ReservationNumber, RoomNumber), 
+    FOREIGN KEY fk_RoomReservation_ReservationNumber(ReservationNumber)
+		REFERENCES GuestReservation(ReservationNumber),
+	FOREIGN KEY fk_RoomReservation_RoomNumber(RoomNumber)
+		REFERENCES Rooms(RoomNumber),
 	
-    Adults CHAR(1),
-    Children CHAR(1),
+    Adults CHAR(1) NOT NULL,
+    Children CHAR(1) NOT NULL,
     StartDate DATE,
     EndDate DATE,
     TotalCost DECIMAL(7,2)
-)
+);
+    

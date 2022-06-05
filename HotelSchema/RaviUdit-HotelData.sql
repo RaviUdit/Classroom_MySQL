@@ -49,6 +49,11 @@ INSERT INTO Guests (GuestFirstName, GuestLastName, GuestAddress, City, State, Zi
     ('Maritza', 'Tilton', '939 Linda Rd.', 'Burke', 'VA', '22015', '(446) 351-6860'),
     ('Joleen', 'Tison', '87 Queen St.', 'Drexel Hill', 'PA', '19026', '(231) 893-2755');
 
+-- Inserting Data for Reservations
+INSERT INTO Reservation (RoomNumber, GuestID, Adults, Children, StartDate, EndDate, TotalCost) VALUES
+	(308, 2, 1, 0, '2023-02-02', '2023-02-04', 299.98),
+    
+
 
 -- SELECT * FROM guests;
 -- SELECT * FROM roomtype;
