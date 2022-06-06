@@ -107,3 +107,4 @@ INSERT INTO RoomReservation(ReservationNumber, RoomNumber, Adults, Children, Sta
 -- SELECT * FROM rooms;
 -- SELECT * FROM Guests WHERE GuestAddress LIKE'%Hawaii%';
 -- SELECT * FROM guestreservation;
+-- SELECT * FROM roomreservation;
