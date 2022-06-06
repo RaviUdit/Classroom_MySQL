@@ -102,6 +102,22 @@ INSERT INTO RoomReservation(ReservationNumber, RoomNumber, Adults, Children, Sta
     (22, 301, 2, 2, '2023-11-22', '2023-11-25', 599.97), 
     (23, 302, 2, 0, '2023-12-24', '2023-12-28', 699.96);
 
+
+-- Deleting Pendergrass and his reservation. 
+SET SQL_SAFE_UPDATES = 0;
+
+-- Removing reservation first. 
+DELETE FROM RoomReservation WHERE ReservationNumber = 8;
+
+-- Removing from GuestReservation
+DELETE FROM GuestReservation WHERE GuestID = 8; 
+
+-- Deleting Pendergrass from the System
+DELETE FROM Guests WHERE GuestID = 8;
+
+-- Return to Safe Updates. 
+SET SQL_SAFE_UPDATES = 1;
+
 -- SELECT * FROM guests;
 -- SELECT * FROM roomtype;
 -- SELECT * FROM rooms;
