@@ -67,3 +67,42 @@ SELECT Guests.GuestFirstName,
 -- Mack	Simmer	208	2	0	2023-09-16
 -- Mack	Simmer	206	2	0	2023-11-22
 -- Mack	Simmer	301	2	2	2023-11-22
+
+-- 4. Write a query that returns a list of rooms, reservation ID, and per-room cost for each reservation. The results should include all 
+--    rooms, whether or not there is a reservation associated with the room.
+
+SELECT Rooms.RoomNumber, 
+	   RoomReservation.ReservationNumber, 
+       RoomReservation.TotalCost
+       FROM Rooms
+       LEFT OUTER JOIN RoomReservation ON Rooms.RoomNumber = RoomReservation.RoomNumber; 
+       
+-- Results
+-- RoomNumber, ReservationNumber, Cost
+-- 205	14	699.96
+-- 206	12	599.96
+-- 206	22	449.97
+-- 207	10	174.99
+-- 208	12	599.96
+-- 208	19	149.99
+-- 305	3	349.98
+-- 305	18	349.98
+-- 306		
+-- 307	5	524.97
+-- 308		
+-- 201	4	199.99
+-- 202	7	349.98
+-- 203	2	999.95
+-- 203	20	399.98
+-- 204	15	184.99
+-- 301	9	799.96
+-- 301	22	599.97
+-- 302	1	299.98
+-- 302	6	924.95
+-- 302	23	699.96
+-- 303	17	199.99
+-- 304	13	184.99
+-- 401	11	1199.97
+-- 401	16	1259.97
+-- 401	21	1199.97
+-- 402		
