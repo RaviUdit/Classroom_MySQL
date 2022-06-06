@@ -15,6 +15,7 @@ SELECT RoomReservation.ReservationNumber,
        WHERE RoomReservation.EndDate BETWEEN '2023-07-01' AND '2023-07-31';
 
 -- Results
+-- Reservation Number, GuestFirstName, GuestLastName, StartDate, EndDate
 -- 14	205	Ravi	Udit	2023-06-28	2023-07-02
 -- 15	204	Wilfred	Vise	2023-07-13	2023-07-14
 -- 16	401	Maritza	Tilton	2023-07-18	2023-07-21
@@ -34,6 +35,7 @@ SELECT RoomReservation.ReservationNumber,
        WHERE Rooms.Amenities LIKE '%Jacuzzi%';
        
 -- Results 
+-- ReservationNumber, GuestFirstName, GuestLastName, RoomNumber, StartDate, EndDate
 -- 2	Bettyann	Seery	203	2023-02-05	2023-02-10
 -- 3	Duane 	Cullison	305	2023-02-22	2023-02-24
 -- 4	Karie	Yang	201	2023-03-06	2023-03-07
@@ -44,3 +46,24 @@ SELECT RoomReservation.ReservationNumber,
 -- 17	Bettyann	Seery	303	2023-07-28	2023-07-29
 -- 18	Bettyann	Seery	305	2023-08-30	2023-09-01
 -- 20	Karie	Yang	203	2023-09-13	2023-09-15
+
+-- 3. Write a query that returns all the rooms reserved for a specific guest, including the guest's name, the room(s) reserved, the starting date 
+--    of the reservation, and how many people were included in the reservation. (Choose a guest's name from the existing data.)
+SELECT Guests.GuestFirstName, 
+       Guests.GuestLastName, 
+       RoomReservation.RoomNumber,
+       RoomReservation.Adults,
+       RoomReservation.Children,
+       RoomReservation.StartDate
+       FROM RoomReservation
+       INNER JOIN GuestReservation ON RoomReservation.ReservationNumber = GuestReservation.ReservationNumber
+       INNER JOIN Guests ON GuestReservation.GuestID = Guests.GuestID
+       INNER JOIN Rooms ON RoomReservation.RoomNumber = Rooms.RoomNumber 
+       WHERE Guests.GuestFirstName LIKE '%Mack%';
+
+-- Results
+-- GuestFirstName, GuestLastName, RoomNumber, Adults, Children, StartDate
+-- Mack	Simmer	302	1	0	2023-02-02
+-- Mack	Simmer	208	2	0	2023-09-16
+-- Mack	Simmer	206	2	0	2023-11-22
+-- Mack	Simmer	301	2	2	2023-11-22
