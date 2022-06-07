@@ -106,3 +106,20 @@ SELECT Rooms.RoomNumber,
 -- 401	16	1259.97
 -- 401	21	1199.97
 -- 402		
+
+-- 5. Write a query that returns all the rooms accommodating at least three guests and that are reserved on any date in April 2023.
+SELECT RoomNumber,
+	   Adults,
+       Children,
+	   Adults + Children totalGuests
+       FROM RoomReservation
+       WHERE EndDate BETWEEN '2023-04-01' AND '2023-04-30'
+       HAVING Adults + Children > 2;
+
+-- Results
+-- No results match inputted parameters. 
+       
+-- 6. Write a query that returns a list of all guest names and the number of reservations per guest, sorted starting with the 
+-- 	  guest with the most reservations and then by the guest's last name.   
+       
+       
