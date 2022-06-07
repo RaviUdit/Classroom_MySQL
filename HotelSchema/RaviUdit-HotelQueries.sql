@@ -121,6 +121,28 @@ SELECT RoomNumber,
        
 -- 6. Write a query that returns a list of all guest names and the number of reservations per guest, sorted starting with the 
 -- 	  guest with the most reservations and then by the guest's last name.   
+SELECT Guests.GuestFirstName, 
+	   Guests.GuestLastName, 
+       COUNT(RoomReservation.ReservationNumber) Reservations
+       FROM RoomReservation
+       INNER JOIN GuestReservation ON RoomReservation.ReservationNumber = GuestReservation.ReservationNumber
+       INNER JOIN Guests ON GuestReservation.GuestID = Guests.GuestID
+       GROUP BY Guests.GuestLastName
+       ORDER BY Reservations DESC; 
+       
+-- Results
+-- GuestFirstName, GuestLastName, Reservations
+-- Mack	Simmer	4
+-- Bettyann	Seery	3
+-- Maritza	Tilton	3
+-- Ravi	Udit	2
+-- Duane 	Cullison	2
+-- Karie	Yang	2
+-- Aurore	Lipton	2
+-- Wilfred	Vise	2
+-- Joleen	Tison	2
+-- Zachery	Luechtefeld	1
+-- Walter	Holaway	1
     
 -- 7. Write a query that displays the name, address, and phone number of a guest based on their phone number. (Choose a phone number from the existing data.)
 SELECT * FROM Guests WHERE PhoneNumber = '(291) 553-0508';
