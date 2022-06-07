@@ -121,5 +121,10 @@ SELECT RoomNumber,
        
 -- 6. Write a query that returns a list of all guest names and the number of reservations per guest, sorted starting with the 
 -- 	  guest with the most reservations and then by the guest's last name.   
-       
-       
+    
+-- 7. Write a query that displays the name, address, and phone number of a guest based on their phone number. (Choose a phone number from the existing data.)
+SELECT * FROM Guests WHERE PhoneNumber = '(291) 553-0508';
+
+-- Result 
+--  GuestID, GuestFirstName, GuestLastName, GuestAddress, City, State, ZipCode, PhoneNumber
+-- 2	Mack	Simmer	379 Old Shore Street	Council Bluffs	IA	51501	(291) 553-0508

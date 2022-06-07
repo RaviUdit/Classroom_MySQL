@@ -36,7 +36,7 @@ INSERT INTO Rooms (RoomNumber, RoomTypeID, Amenities, AdaAccessible, BasePrice, 
 
 -- Inserting Data about Guests
 INSERT INTO Guests (GuestFirstName, GuestLastName, GuestAddress, City, State, ZipCode, PhoneNumber) VALUES
- 	('Ravi', 'Udit', '1010 Hawaii Way', 'Honolulu', 'HI', '96734', '613-858-9762'),
+ 	('Ravi', 'Udit', '1010 Hawaii Way', 'Honolulu', 'HI', '96734', '(613) 858-9762'),
     ('Mack', 'Simmer', '379 Old Shore Street', 'Council Bluffs', 'IA', '51501', '(291) 553-0508'),
     ('Bettyann', 'Seery', '750 Wintergreen Drive', 'Wasilla', 'AK', '99654', '(478) 277-9632'),
     ('Duane ', 'Cullison', '9662 Foxrun Lane', 'Harlingen', 'TX', '78552', '(308) 494-0198'),
