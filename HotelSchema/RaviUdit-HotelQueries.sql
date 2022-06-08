@@ -128,21 +128,21 @@ SELECT Guests.GuestFirstName,
        INNER JOIN GuestReservation ON RoomReservation.ReservationNumber = GuestReservation.ReservationNumber
        INNER JOIN Guests ON GuestReservation.GuestID = Guests.GuestID
        GROUP BY Guests.GuestLastName
-       ORDER BY Reservations DESC; 
+       ORDER BY Reservations DESC, Guests.GuestLastName ASC; 
        
 -- Results
 -- GuestFirstName, GuestLastName, Reservations
 -- Mack	Simmer	4
 -- Bettyann	Seery	3
 -- Maritza	Tilton	3
--- Ravi	Udit	2
 -- Duane 	Cullison	2
--- Karie	Yang	2
 -- Aurore	Lipton	2
--- Wilfred	Vise	2
 -- Joleen	Tison	2
--- Zachery	Luechtefeld	1
+-- Ravi	Udit	2
+-- Wilfred	Vise	2
+-- Karie	Yang	2
 -- Walter	Holaway	1
+-- Zachery	Luechtefeld	1
     
 -- 7. Write a query that displays the name, address, and phone number of a guest based on their phone number. (Choose a phone number from the existing data.)
 SELECT * FROM Guests WHERE PhoneNumber = '(291) 553-0508';

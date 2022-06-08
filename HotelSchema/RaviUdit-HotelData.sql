@@ -118,7 +118,7 @@ DELETE FROM Guests WHERE GuestID = 8;
 -- Return to Safe Updates. 
 SET SQL_SAFE_UPDATES = 1;
 
--- SELECT * FROM guests;
+ SELECT * FROM guests;
 -- SELECT * FROM roomtype;
 -- SELECT * FROM rooms;
 -- SELECT * FROM Guests WHERE GuestAddress LIKE'%Hawaii%';
